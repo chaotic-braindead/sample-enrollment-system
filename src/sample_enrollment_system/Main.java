@@ -5,11 +5,10 @@ import view.EnrollmentPanel;
 
 public class Main {
     public static void main(String[] args) {
-        EnrollmentFrame frame = new EnrollmentFrame("hello", new EnrollmentPanel()); 
-        try {
-            frame.start();
-        } catch(Exception e) {
-            System.out.print(e);
-        }
+        EnrollmentFrame frame = new EnrollmentFrame();
+        EnrollmentPanel panel = new EnrollmentPanel(frame);
+        frame.setPanel(panel); 
+        frame.display(EnrollmentFrame.Menu.MAIN);
+        
     }
 }
