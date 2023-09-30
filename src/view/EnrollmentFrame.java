@@ -26,9 +26,10 @@ public class EnrollmentFrame extends JFrame {
         switch(m){
             case MAIN: panel.mainMenu();   
                        break;
-            default:   throw new Exception("Menu invalid");
+            default:   panel.notFound();
         }
         this.setVisible(true);
     }
+    
     
 }
