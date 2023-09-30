@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JFrame;
+import model.Account;
 
 public class EnrollmentFrame extends JFrame {
     public static final int WIDTH = 980;
@@ -8,7 +9,7 @@ public class EnrollmentFrame extends JFrame {
     private EnrollmentPanel panel;
 
     public enum Menu {
-        MAIN, LOGIN, SIGNUP, ENROLL
+        MAIN, LOGIN, SIGNUP, SETUP, ENROLL, DASHBOARD
     }
 
     public EnrollmentFrame(){
@@ -24,18 +25,25 @@ public class EnrollmentFrame extends JFrame {
 
     public void display(Menu m) {
         switch(m){
-            case MAIN:   this.setTitle(panel.mainMenu());   
-                         break;
-            case LOGIN:  this.setTitle(panel.login());
-                         break;
-            case SIGNUP: this.setTitle(panel.signUp());
-                         break;
-            case ENROLL: this.setTitle(panel.enroll());
-                         break;
+            case MAIN:      this.setTitle(panel.mainMenu());   
+                            break;
+            case LOGIN:     this.setTitle(panel.login());
+                            break;
+            case SIGNUP:    this.setTitle(panel.signUp());
+                            break;
+            case ENROLL:    this.setTitle(panel.enroll());
+                            break;
         }
         this.setVisible(true);
     }
-    
 
-    
+    public void display(Menu m, Account a) {
+        switch(m){
+            case SETUP:     this.setTitle(panel.setup(a));
+                            break;
+            case DASHBOARD: this.setTitle(panel.dashboard(a));
+
+        }
+        this.setVisible(true);
+    }
 }

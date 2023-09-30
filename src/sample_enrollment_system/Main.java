@@ -9,6 +9,5 @@ public class Main {
         EnrollmentPanel panel = new EnrollmentPanel(frame);
         frame.setPanel(panel);  // wonky AF
         frame.display(EnrollmentFrame.Menu.MAIN);
-        
     }
 }

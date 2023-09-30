@@ -1,23 +1,15 @@
 package model;
 
-public class Student {
-    private String name;
-    private String course;
-    private byte year;
-    private byte block;
-    private boolean isRegular;
+public class Student extends Account {
+    protected String course;
+    protected byte year;
+    protected byte block;
+    protected boolean isRegular;
 
-    public Student(String name, String course, byte year, byte block){
-        this.name = name;
-        this.course = course;
-        this.year = year;
-        this.block = block;
-        this.isRegular = true;
+    public Student(String username, String password){
+        super(username, password);
     }
 
-    public String getName(){
-        return this.name;
-    }
     public String getCourse(){
         return this.course;
     }
@@ -30,9 +22,6 @@ public class Student {
     public boolean getisRegular(){
         return this.isRegular;
     }
-    public void setName(String name){
-        this.name = name;
-    }
     public void setCourse(String course){
         this.course = course;
     }
@@ -44,6 +33,9 @@ public class Student {
     }
     public void setisRegular(boolean isRegular){
         this.isRegular = isRegular;
+    }
+    public String toString(){
+        return String.format("Name: %s\nYear: %d\nCourse/Block: %s-%d\nRegular Student: %s", this.name, this.year, this.course, this.block, (this.isRegular ? "Yes" : "No"));
     }
     
 }
